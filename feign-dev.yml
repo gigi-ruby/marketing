@@ -1,0 +1,4 @@
+# 开启Feign熔断功能
+feign:
+  hystrix:
+    enabled: true

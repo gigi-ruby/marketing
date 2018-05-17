@@ -1,0 +1,7 @@
+# RabbitMQ
+spring:
+  rabbitmq:
+    host: 192.16.8.133
+    port: 5672
+    username: admin
+    password: cor2018

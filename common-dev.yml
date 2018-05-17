@@ -1,0 +1,3 @@
+# Zuul服务端口
+zuul:
+  port: 8760

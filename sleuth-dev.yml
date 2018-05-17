@@ -1,0 +1,12 @@
+# Sleuth
+spring:
+  # Zipkin Server
+  zipkin:
+    base-url: http://zipkin
+    locator:
+      discovery:
+        enabled: true
+  # 链路数据采集率
+  sleuth:
+    sampler:
+      percentage: ${sleuthPercentage:0.5}

@@ -1,0 +1,12 @@
+# eureka.instance.status-page-url
+status-page-url:
+  suffix: ${server.port}/zipkin/
+
+# 服务端口
+server:
+  port: 8764
+
+# 服务名
+spring:
+  application:
+    name: zipkin

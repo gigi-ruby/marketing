@@ -1,0 +1,22 @@
+# eureka.instance.status-page-url
+status-page-url:
+  suffix: ${server.port}/hystrix
+
+# 服务端口
+server:
+  port: 8763
+
+# 服务名
+spring:
+  application:
+    name: turbine
+
+# Turbine turbine.stream端口
+turbine:
+  stream:
+    port: 8989
+
+# 安全验证
+security:
+  basic:
+    enabled: false
