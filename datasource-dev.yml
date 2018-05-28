@@ -1,0 +1,41 @@
+# Datasource Config
+spring:
+  datasource:
+    # Druid Datasource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://192.16.8.156:13400/${db.name}?useUnicode=true&characterEncoding=utf8
+      username: marketing
+      password: cor2018
+      # 初始化连接数量
+      initial-size: 3
+      # 最大连接数
+      max-active: 100
+      # 最小连接数
+      min-idle: 5
+      # 获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # 用来检测连接是否有效的sql，要求是一个查询语句
+      validation-query: SELECT 1 FROM DUAL
+      # 申请连接的时候检测
+      test-while-idle: true
+      # 申请连接时执行validationQuery检测连接是否有效，配置为true会降低性能
+      test-on-borrow: false
+      # 归还连接时执行validationQuery检测连接是否有效，配置为true会降低性能
+      test-on-return: false
+      # 打开PSCache，并且指定每个连接上PSCache的大小
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      # 属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：
+      # 监控统计用的filter:stat 日志用的filter:log4j 防御SQL注入的filter:wall
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+          db-type: mysql

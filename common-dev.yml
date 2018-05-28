@@ -1,3 +1,1 @@
-# Zuul服务端口
-zuul:
-  port: 8770
+# Common Config

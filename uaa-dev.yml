@@ -1,0 +1,17 @@
+# DB Name datasource-dev.yml:spring.datasource.druid.url
+db:
+#  name: ${spring.application.name:uaa}
+  name: uaa
+
+# 服务端口
+server:
+  port: 8081
+
+# 服务名
+#spring:
+#  application:
+#    name: uaa
+
+# mxm同步接口url
+mxm:
+  url: http://192.16.8.133:8280/mxm

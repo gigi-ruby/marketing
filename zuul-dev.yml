@@ -1,15 +1,6 @@
-# Zuul filter order
-order:
-  AccessFilter: 0
-foo: 1234
-
-# eureka.instance.status-page-url
-status-page-url:
-  suffix: ${server.port:8760}/swagger-ui.html
-
 # 服务端口
 server:
-  port: ${zuul.port:8760}
+  port: 8760
 
 # 服务名
 spring:
@@ -27,8 +18,8 @@ ribbon:
   # Ribbon缓存刷新时间，默认为30秒
   ServerListRefreshInterval: 1000
   # 需考虑降低Ribbon的读取与连接超时上限
-#  read-timeout: 60000
-#  connect-timeout: 60000
+  read-timeout: 60000
+  connect-timeout: 20000
 
 # Spring Security配置
 security:
@@ -53,6 +44,12 @@ zuul:
     order:
       path: /order/**
       serviceId: dms-order
+    order-zzy:
+      path: /order-zzy/**
+      serviceId: dms-order-zzy
+    order-hxj:
+      path: /order-hxj/**
+      serviceId: dms-order-hxj
     dictionary:
       path: /dictionary/**
       serviceId: dictionary
@@ -64,9 +61,24 @@ zuul:
       serviceId: schedule
     uaa:
       path: /uaa/**
-      serviceId: marketing-uaa
+      serviceId: uaa
+    uaa-ldz:
+      path: /uaa-ldz/**
+      serviceId: uaa-ldz
+    message:
+      path: /message/**
+      serviceId: message
   add-host-header: true
   sensitive-headers: 
-  host:
-    connect-timeout-millis: 10000
-    socket-timeout-millis: 60000
+#  host:
+#    connect-timeout-millis: 10000
+#    socket-timeout-millis: 60000
+    
+##熔断超时配置 未测试
+#hystrix:  
+#  command:  
+#    default:  
+#      execution:  
+#        isolation:  
+#          thread:  
+#            timeoutInMilliseconds: 60000

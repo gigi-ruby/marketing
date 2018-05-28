@@ -1,0 +1,17 @@
+# DB Name datasource-dev.yml:spring.datasource.druid.url
+db:
+  name: dms_order
+
+# 服务端口
+server:
+  port: 8084
+
+# 服务名
+spring:
+  application:
+    name: message
+
+# 配置消息推送url
+mxm:
+  push:
+    url: http://192.16.8.133:8280/mxm/dms/push/systemMsg

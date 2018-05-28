@@ -1,4 +1,4 @@
-# Eureka
+# Eureka Instance
 eureka:
   # 服务提供方
   instance:
@@ -6,7 +6,7 @@ eureka:
     prefer-ip-address: true
     # Eureka Server的注册表Status显示内容格式
     instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-    status-page-url: http://${spring.cloud.client.ipAddress}:${status-page-url.suffix}
+    status-page-url: http://${eureka.instance.instance-id}/swagger-ui.html
     # 服务心跳时间间隔，默认为30
     lease-renewal-interval-in-seconds: 1
     # 服务过期时间，超过这个时间没有接收到心跳EurekaServer就会将这个实例剔除，默认为90

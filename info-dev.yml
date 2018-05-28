@@ -1,0 +1,12 @@
+# DB Name datasource-dev.yml:spring.datasource.druid.url
+db:
+  name: ${spring.application.name:info}
+
+# 服务端口
+server:
+  port: 8085
+
+# 服务名
+spring:
+  application:
+    name: info

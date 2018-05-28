@@ -1,2 +1,3 @@
 # marketing
-Mobile Marketing
+
+Local configuration files repository for Mobile Marketing product.

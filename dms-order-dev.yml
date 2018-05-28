@@ -1,0 +1,12 @@
+# DB Name datasource-dev.yml:spring.datasource.druid.url
+db:
+  name: dms_order
+
+# 服务端口
+server:
+  port: 8086
+
+# 服务名
+# spring:
+#   application:
+#     name: dms-order

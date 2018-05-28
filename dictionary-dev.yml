@@ -1,0 +1,16 @@
+# URI Suffix eureka-dev.yml:eureka.instance.status-page-url
+#status-page-url:
+#  suffix: ${zuul.port:8760}/${spring.application.name:dictionary}/swagger-ui.html
+
+# DB Name datasource-dev.yml:spring.datasource.druid.url
+db:
+  name: ${spring.application.name:dictionary}
+
+# 服务端口
+server:
+  port: 8082
+
+# 服务名
+spring:
+  application:
+    name: dictionary

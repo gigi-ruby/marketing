@@ -1,0 +1,23 @@
+# MyBatis-Plus Config
+mybatis-plus:
+  # *Mapper.xml文件路径
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  # 实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.coracle.**.model.po
+  global-config:
+    # 主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+    id-type: 2
+    # 字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+    field-strategy: 2
+    # 驼峰下划线转换
+    db-column-underline: true
+    # 刷新mapper 调试神器
+    refresh-mapper: true
+    # 公共字段填充
+    meta-object-handler: com.coracle.common.support.mybatis.BaseMetaObjectHandler
+  configuration:
+    # 配置返回数据库(column下划线命名&&返回java实体是驼峰命名)，自动匹配无需as（没开启这个，SQL需要写as： select user_id as userId）
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+    # 配置JdbcTypeForNull, oracle数据库必须配置
+    jdbc-type-for-null: 'null'
